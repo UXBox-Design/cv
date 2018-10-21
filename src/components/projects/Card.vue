@@ -33,6 +33,7 @@ export default {
   display: flex;
   flex-direction: column;
   max-width: 560px;
+  font-size: 1.0125em;
   padding: 4em;
   margin-top: 4em;
   margin-bottom: 4em;
@@ -74,7 +75,7 @@ export default {
 
 .button {
   display: inline-flex;
-  font-size: 22px;
+  font-size: 1em;
   text-decoration: none;
 }
 
@@ -97,7 +98,13 @@ export default {
 }
 
 .button + .button {
-  margin-left: 1em;
+  margin-right: 1em;
+}
+
+@media screen and (min-width: 500px) {
+  .button + .button {
+    margin-left: 1em;
+  }
 }
 </style>
 

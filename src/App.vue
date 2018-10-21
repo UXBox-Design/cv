@@ -84,7 +84,7 @@ body {
 #app {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -97,6 +97,12 @@ body {
   overflow: scroll;
   padding: 40px;
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@media screen and (min-width: 500px) {
+  #app {
+    font-size: 18px;
+  }
 }
 
 .dark {

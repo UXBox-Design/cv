@@ -2,7 +2,7 @@
   <section class="about">
     <h1 class="display">
       <span>Hello visitor,</span>
-      My name is<br/> Dustin Delatore.</h1>
+      My name is Dustin Delatore.</h1>
       <div v-if="about" class="content">
         <prismic-rich-text :field="about" />
       </div>

@@ -21,6 +21,13 @@
     :field="fields.resume">
       Download my resumé
     </prismic-link>
+
+    <div class="small">
+      <prismic-rich-text :field="fields.explainer" />
+      <prismic-link class="button" :field="fields.github">
+        View it on Github
+      </prismic-link>
+    </div>
     
   </footer>
 </template>
@@ -34,7 +41,9 @@ export default {
       copyMessage: "",
       copySuccess: false,
       fields: {
-        resume: null
+        resume: null,
+        explainer: null,
+        github: null
       }
     };
   },
@@ -56,6 +65,8 @@ export default {
     getContent() {
       this.$prismic.client.getSingle("footer").then(document => {
         this.fields.resume = document.data.resume;
+        this.fields.explainer = document.data.explainer;
+        this.fields.github = document.data.github;
       });
     }
   }
@@ -65,6 +76,11 @@ export default {
 <style>
 footer {
   margin-top: 2em;
+}
+.small {
+  font-size: 0.8em;
+  max-width: 500px;
+  margin: 2em auto;
 }
 .display {
   font-size: 4em;

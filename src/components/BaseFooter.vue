@@ -50,7 +50,7 @@ export default {
               event.text
             } has been copied to your clipboard? I look forward to hearing from you.`);
         },
-        event => (this.copyMessage = "Failed to copy email address")
+        () => (this.copyMessage = "Failed to copy email address")
       );
     },
     getContent() {

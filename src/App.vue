@@ -5,6 +5,8 @@
 
     <ProjectList :projects="fields.projects" />
 
+    <BaseFooter />
+
     <Affix>
       <BaseSwitch 
         v-model="darkMode"
@@ -20,6 +22,7 @@ import About from "@/components/About.vue";
 import ProjectList from "@/components/projects/List.vue";
 import Affix from "@/components/Affix.vue";
 import BaseSwitch from "@/components/BaseSwitch.vue";
+import BaseFooter from "@/components/BaseFooter.vue";
 
 export default {
   name: "app",
@@ -27,7 +30,8 @@ export default {
     About,
     ProjectList,
     Affix,
-    BaseSwitch
+    BaseSwitch,
+    BaseFooter
   },
   data() {
     return {

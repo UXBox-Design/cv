@@ -29,6 +29,7 @@ export default {
 .projects {
   position: relative;
   margin-top: 6em;
+  margin-bottom: 6em;
 }
 
 .projects:after {

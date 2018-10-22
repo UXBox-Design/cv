@@ -10,6 +10,7 @@
   "dependencies": {
     "prismic-vue": "^1.3.0",
     "vue": "^2.5.17",
+    "vue-analytics": "^5.16.0",
     "vue-clipboard2": "^0.2.1"
   },
   "devDependencies": {

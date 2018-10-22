@@ -2,9 +2,10 @@
   <div class="switch-container"> 
     <slot />
     <label class="switch">
-      <input type="checkbox"
+      <input 
+        type="checkbox"
         v-bind="$attrs"
-        @input="updateCheck($event)"/>
+        @change="updateCheck($event)"/>
       <span class="slider"></span>
     </label> 
   </div>

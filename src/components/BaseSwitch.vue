@@ -18,6 +18,11 @@ export default {
   methods: {
     updateCheck(event) {
       this.$emit("input", event.target.checked);
+      this.$ga.event({
+        eventCategory: 'Switch',
+        eventAction: `Dark Mode: '${event.target.checked}'`,
+        eventLabel: 'Theme Switch'
+      })
     }
   }
 };

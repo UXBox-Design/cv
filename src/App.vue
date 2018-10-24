@@ -1,12 +1,8 @@
 <template>
   <div id="app" :class="[darkMode ? 'dark' : 'light']">
     
-    <About :about="fields.about" />
-
-    <ProjectList :projects="fields.projects" />
-
-    <BaseFooter />
-
+    <router-view></router-view>
+    
     <Affix>
       <BaseSwitch 
         v-model="darkMode"
@@ -18,33 +14,19 @@
 </template>
 
 <script>
-import About from "@/components/About.vue";
-import ProjectList from "@/components/projects/List.vue";
 import Affix from "@/components/Affix.vue";
 import BaseSwitch from "@/components/BaseSwitch.vue";
-import BaseFooter from "@/components/BaseFooter.vue";
 
 export default {
   name: "app",
   components: {
-    About,
-    ProjectList,
     Affix,
-    BaseSwitch,
-    BaseFooter
+    BaseSwitch
   },
   data() {
     return {
-      darkMode: false,
-      fields: {
-        title: null,
-        about: null,
-        projects: null
-      }
-    };
-  },
-  created() {
-    this.getContent();
+      darkMode: false
+    }
   },
   mounted() {
     if (this.getLocalStorage()) {
@@ -67,13 +49,6 @@ export default {
   methods: {
     getLocalStorage() {
       return localStorage.getItem(this.$storagekey);
-    },
-    getContent() {
-      this.$prismic.client.getSingle("home").then(document => {
-        this.fields.title = document.data.display;
-        this.fields.about = document.data.about;
-        this.fields.projects = document.data.projects;
-      });
     }
   }
 };
@@ -98,7 +73,8 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  overflow: scroll;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   padding: 40px;
   transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }

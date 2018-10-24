@@ -18,7 +18,7 @@
     <h2>And / Or</h2>
     
     <prismic-link class="button-block"
-    :field="fields.resume">
+      :field="fields.resume" @click="downloadResume">
       Download my resumé
     </prismic-link>
 
@@ -61,6 +61,16 @@ export default {
         },
         () => (this.copyMessage = "Failed to copy email address")
       );
+      this.$ga.event({
+        eventCategory: 'Button',
+        eventAction: `Copy Email`
+      })
+    },
+    downloadResume() {
+      this.$ga.event({
+        eventCategory: 'Button',
+        eventAction: 'Download'
+      })
     },
     getContent() {
       this.$prismic.client.getSingle("footer").then(document => {

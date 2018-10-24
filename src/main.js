@@ -9,7 +9,10 @@ Vue.use(PrismicVue, {
 })
 
 Vue.use(VueAnalytics, {
-  id: 'UA-33579395-7'
+  id: 'UA-33579395-7',
+  autoTracking: {
+    screenview: true
+  }
 })
 
 Vue.use(VueClipboard)
